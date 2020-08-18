@@ -1,0 +1,33 @@
+url: 'https://your-company-JIRA-url'
+clientId: 'your-account-email-id'
+clientSecret: 'your-generated-token-key'
+
+browse_jira_url: 'https://your-company-JIRA-url/browse/'
+
+payload:
+  createIssue:
+    createIssueWithNoSprint: '{
+            "fields": {
+              "project": {
+                "key": "%s"
+              },
+              "summary": "%s",
+              "description": "%s",
+              "issuetype": {
+                "name": "%s"
+              }
+            }
+          }'
+    createIssueWithSprint: '{
+          "fields": {
+            "project": {
+              "key": "%s"
+            },
+            "summary": "%s",
+            "description": "%s",
+            "issuetype": {
+              "name": "5s"
+            },
+            "customfield_10007": "%s"
+          }
+        }'
