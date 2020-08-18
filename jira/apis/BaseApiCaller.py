@@ -6,7 +6,7 @@ import requests
 logger = logging.getLogger(__name__)
 
 
-class BaseBidgelyApi:
+class BaseApiCaller:
     url = None
     access_token = None
     client_id = None

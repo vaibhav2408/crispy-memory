@@ -1,10 +1,10 @@
 import logging
 
-from bidgely.apis import ApisHelper
-from bidgely.apis.BaseBidgelyApi import BaseBidgelyApi
-from bidgely.utils.jira.payload import PayloadBuilder
-from bidgely.utils.reader.ExcelFileParser import ExcelFileParser
-from bidgely.utils.reader.config_utils import ConfigUtils
+from jira.apis import ApisHelper
+from jira.apis.BaseApiCaller import BaseApiCaller
+from jira.utils.jira.payload import PayloadBuilder
+from jira.utils.reader.ExcelFileParser import ExcelFileParser
+from jira.utils.reader.config_utils import ConfigUtils
 
 logger = logging.getLogger(__name__)
 
@@ -20,9 +20,9 @@ def execute(filepath):
     print(configs['clientSecret'])
 
     _excel_file_parser = ExcelFileParser(filepath)
-    jira_beans = _excel_file_parser.read_bidgely_jira_sheet()
+    jira_beans = _excel_file_parser.read_jira_excel_sheet()
 
-    _api_caller = BaseBidgelyApi(configs)
+    _api_caller = BaseApiCaller(configs)
 
     create_issue_uri = ApisHelper.Apis.create_issue
     for jira_bean in jira_beans:

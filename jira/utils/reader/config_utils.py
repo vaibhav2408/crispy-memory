@@ -4,7 +4,7 @@ import os
 
 import yaml
 
-from bidgely.definitions import CONFIGS_FOLDER
+from jira.definitions import CONFIGS_FOLDER
 
 
 class ConfigUtils:
@@ -13,7 +13,6 @@ class ConfigUtils:
     def read_file(self, path):
         """
         Reads the yaml/text file and returns the content in yaml/json format
-        :param environment:
         :param path:
         :return:
         """

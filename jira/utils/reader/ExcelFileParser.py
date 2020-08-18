@@ -2,7 +2,7 @@ import logging
 
 import xlrd
 
-from bidgely.utils.jira.issue_bean.Issuebean import IssueBean
+from jira.utils.jira.issue_bean.Issuebean import IssueBean
 
 logger = logging.getLogger(__name__)
 
@@ -18,7 +18,7 @@ class ExcelFileParser:
     def __init__(self, file_path):
         self.file_path = file_path
 
-    def read_bidgely_jira_sheet(self):
+    def read_jira_excel_sheet(self):
         """
             The sheet is of format:
             ROW 1 - Guidelines.

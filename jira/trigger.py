@@ -1,7 +1,7 @@
 import logging as logger
 import sys
 
-from bidgely.core.jira_builder import CreateJIRAIssues
+from jira.core.jira_builder import CreateJIRAIssues
 
 """
 Setting up the format of the log message.
