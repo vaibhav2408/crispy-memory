@@ -31,6 +31,7 @@ def execute(filepath):
         else:
             formatted_payload = PayloadBuilder.get_payload_with_sprint(configs, jira_bean)
         response = _api_caller.post(create_issue_uri, formatted_payload)
-        print('Ticket created in project {} \nTicket ID : {}\nLink : {}'.format(jira_bean.project_name, response['key'],
-                                                                                configs['browse_jira_url'] +
-                                                                                response['key']))
+
+        logger.info('Ticket created in project {} '.format(jira_bean.project_name))
+        logger.info('Ticket ID : {}'.format(response['key']))
+        logger.info('Ticket Link : {}'.format(configs['browse_jira_url'] + response['key']))
